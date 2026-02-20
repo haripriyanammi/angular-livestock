@@ -2,13 +2,13 @@
 import type { Request,Response } from "express";
 import mongoose from "mongoose";
 //for the data base strorage
-import { getCurrentPrice } from "../services/priceServices.js";
+import { getCurrentPrice } from "../services/priceServices";
 //to fetch the current stock price
-import Stock from "../models/stocks.js";
+import Stock from "../models/stocks";
 //to save the alert
-import { publish } from "../services/realtime.js";
+import { publish } from "../services/realtime";
 //to send a real time message to frontend
-import { generateVoiceAlert } from "../services/voiceServices.js"; // ✅ Step 1: Import voice service
+import { generateVoiceAlert } from "../services/voiceServices"; // ✅ Step 1: Import voice service
 //to generate voice
 
 // Simple history model - stores individual price checks for a symbol.
