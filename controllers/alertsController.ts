@@ -1,3 +1,4 @@
+
 import type { Request,Response } from "express";
 import mongoose from "mongoose";
 //for the data base strorage
@@ -5,7 +6,7 @@ import { getCurrentPrice } from "../services/priceServices.js";
 //to fetch the current stock price
 import Stock from "../models/stocks.js";
 //to save the alert
-import { publishAlert } from "../services/ablyService.js";
+import { publish } from "../services/realtime.js";
 //to send a real time message to frontend
 import { generateVoiceAlert } from "../services/voiceServices.js"; // ✅ Step 1: Import voice service
 //to generate voice
@@ -123,7 +124,7 @@ export const createAlert = async (req: Request, res: Response) => {
     };
 
     // 8) Publish via Ably
-    publishAlert(symbol, payload);//sended the exact information to te websockey
+await publish("alerts", "alert-created", payload);
 
     // 9) Respond
     return res.status(201).json({
