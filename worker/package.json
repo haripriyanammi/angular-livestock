@@ -1,23 +1,21 @@
 {
   "name": "worker",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
-    "ably": "^2.17.1",
-    "aws-sdk": "^2.1693.0",
-    "axios": "^1.13.5",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only index.ts",
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
     "dotenv": "^17.3.1",
     "mongoose": "^9.2.1",
-    "openai": "^6.22.0",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "axios": "^1.6.0",
+    "ably": "^2.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
   }
 }

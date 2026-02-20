@@ -1,5 +1,5 @@
 import {Router } from "express";
-import {createAlert,getAlerts,getHistoryForSymbol} from "../controllers/alertsController.js";
+import {createAlert,getAlerts} from "../controllers/alertsController";
 
 const router = Router();
 
@@ -10,6 +10,5 @@ router.post("/", createAlert);
 router.get("/", getAlerts);
 
 // Get alert history for a specific symbol
-router.get("/history/:symbol", getHistoryForSymbol);
 
 export default router;

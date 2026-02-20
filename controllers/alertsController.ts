@@ -153,18 +153,4 @@ export const getAlerts = async (_req: Request, res: Response) => {
 /**
  * (Bonus) endpoint to get history for a symbol
  */
-export const getHistoryForSymbol = async (req: Request, res: Response) => {
-  try {
-    const { symbol } = req.params;
-    if (!symbol) return res.status(400).json({ error: "symbol required" });
 
-    const history = await AlertHistory.find({
-      symbol: symbol.toUpperCase(),
-    }).sort({ checkedAt: -1 });
-
-    return res.status(200).json(history);
-  } catch (error) {
-    console.error("Error fetching history:", error);
-    return res.status(500).json({ error: "Internal server error" });
-  }
-};

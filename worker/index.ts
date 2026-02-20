@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { checkAlerts } from "./alertChecker.js"; // main work function (one cycle)
+import { checkAlerts } from "./alertchecker"; // main work function (one cycle)
 
 dotenv.config();
 

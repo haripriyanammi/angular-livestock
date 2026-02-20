@@ -1,7 +1,7 @@
-import type { Alert, AlertHistory } from "./types.js";
-import { getAlerts, getLatestHistory, saveHistory, markAlertTriggered } from "./db.js";
-import { fetchPrice } from "./priceFetcher.js";
-import { notify } from "./notifier.js" ;
+import type { Alert, AlertHistory } from "./types";
+import { getAlerts, getLatestHistory, saveHistory, markAlertTriggered } from "./db";
+import { fetchPrice } from "./priceFetcher";
+import { notify } from "./notifier" ;
 
 
 export async function checkAlerts(): Promise<void> {
