@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>📈 Stock Alerts</h2>
+
+  <div *ngIf="alerts.length === 0">
+    <p>No alerts yet.</p>
+  </div>
+
+  <div *ngFor="let alert of alerts" class="alert-card">
+    <h3>{{ alert.stock }} — {{ alert.alert_type | uppercase }}</h3>
+
+    <p>Current Price: ₹{{ alert.stock_price }}</p>
+    <p>Target Price: ₹{{ alert.alert_price }}</p>
+    <p>Created: {{ alert.createdAt | date:'short' }}</p>
+
+    <audio *ngIf="alert.audio_url" controls>
+      <source [src]="alert.audio_url" type="audio/mpeg">
+    </audio>
+  </div>
+</div>

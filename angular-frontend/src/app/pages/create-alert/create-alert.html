@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>➕ Create Stock Alert</h2>
+
+  <label>Stock Symbol</label>
+  <input [(ngModel)]="symbol" placeholder="e.g. TCS"/>
+
+  <label>Target Price</label>
+  <input type="number" [(ngModel)]="targetprice" placeholder="e.g. 3500"/>
+
+  <button (click)="submitAlert()" [disabled]="isLoading">
+    {{ isLoading ? "Creating..." : "Create Alert" }}
+  </button>
+
+  <p>{{ message }}</p>
+</div>
