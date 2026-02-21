@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import Ably from "ably";
 import alertsRouter from "./routes/alerts.js";
 // Load environment variables from .env file
+
 dotenv.config();
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
@@ -14,6 +15,8 @@ const ABLY_KEY = process.env.ABLY_API_KEY ?? "";
 const app = express();//starts the backend
 
 // Middlewares
+app.use(cors({ origin: "http://localhost:4200" }));
+
 app.use(cors());
 app.use(express.json());
 app.use("/api/alerts", alertsRouter);
